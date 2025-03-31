@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Все посты</h1>
+
+<% @posts.each do |post| %>
+  <div class="post card">
+    <div class="card-body">
+      <h2 class="card-title"><%= link_to post.title, post %></h2>
+      <p class="card-text"><%= truncate(post.content, length: 200) %></p>
+      <small>Автор: <%= post.user.email %></small>
+      <% if user_signed_in? && post.user == current_user %>
+        <%= link_to 'Редактировать', edit_post_path(post), class: 'btn btn-outline-warning' %>
+        <!--<%= link_to 'Удалить', post, method: :delete, data: { confirm: 'Удалить запись?' }, class: 'btn btn-danger' %>-->
+        <%= link_to "Удалить", post_path(post), method: :delete, class: 'btn btn-outline-danger' %>
+
+      <% end %>
+    </div>
+  </div>
+  <hr>
+<% end %>
+</div>
+
+<% if user_signed_in? %>
+  <%= link_to 'Создать пост', new_post_path, class: 'btn btn-outline-primary' %>
+<% end %>
