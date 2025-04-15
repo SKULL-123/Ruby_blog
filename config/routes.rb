@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :posts, param: :slug
+  resources :posts, param: :slug do
+    resources :comments, only: [:create]
+  end
+
   devise_for :users
   root "posts#index"
 

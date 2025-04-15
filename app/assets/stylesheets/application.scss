@@ -6,7 +6,7 @@ body {
     color: #89c2e5;
 }
 
-h2 a, h1, h1.card-title{
+h2 a, h1, h1.card-title, h2.card-title{
   color: #23d9b2;
 }
 .btn-outline-primary, .btn-outline-warning, .btn-outline-danger, 
@@ -49,4 +49,40 @@ header{
 }
 form.button_to{
   display: contents;
+}
+.comment-box {
+  background-color: #0c0f4a;
+  border: 1px solid #00c6f4;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 12px;
+}
+.comment-form textarea {
+  width: 100%;
+  border: 1px solid #00c6f4;
+  background-color: #0f157e85;
+  color: #5a72f8;
+  padding: 8px;
+  border-radius: 8px;
+  resize: vertical;
+}
+.comment-form input[type="submit"] {
+  margin-top: 8px;
+  border: 1px solid #00c6f4;
+  color: #00c6f4;
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.comment-form input[type="submit"]:hover {
+  background-color: #00c6f4;
+  color: #00021c;
+}
+h2.comments{
+  color: #00f0ff; 
+  border-bottom: 1px solid #00c6f4; 
+  padding-bottom: 6px;
 }
