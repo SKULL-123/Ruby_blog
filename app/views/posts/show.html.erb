@@ -1,0 +1,23 @@
+<div class="container">
+  <p style="color: green"><%= notice %></p>
+  <div class="post card">
+    <div class="card-body">
+      <h1 class="card-title"><%= @post.title %></h1>
+      <p class="card-text"><%= @post.content %></p>
+      <small class = 'small'>Автор: <%= @post.user.email if @post.user %></small>
+    </div>
+
+  <div class="card-footer">
+    <% if user_signed_in? && @post.user == current_user %>
+      <%= link_to "Редактировать", edit_post_path(@post), class: "btn btn-outline-warning" %>
+      <%= button_to "Удалить", post_path(@post), method: :delete, data: { confirm: "Точно удалить?" }, class: 'btn btn-outline-danger' %>
+    <% end %>
+    <%= link_to "Назад", posts_path, class: 'btn btn-outline-warning'%>
+    <h2 class="card-title comments">🗨️ Комментарии:</h2>
+      <%= render @post.comments.order(id: :desc) %>
+    <% if user_signed_in? %>
+      <%= render partial: 'comments/form', locals: {post: @post} %>
+    <% end %>
+  </div>
+  </div>
+</div>

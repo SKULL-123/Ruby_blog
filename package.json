@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "sass": "^1.63.6"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8"
+  }
+}
