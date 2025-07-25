@@ -15,7 +15,7 @@
 
 1. Клонируйте проект с GitHub:
 
-    git clone https://github.com/SKULL-123/blog_for_inventos.git--рандоммная ссылка заменить
+    git clone https://github.com/SKULL-123/Ruby_blog.git
     cd blog_for_inventos
 
 2. Постройте и запустите контейнеры:
